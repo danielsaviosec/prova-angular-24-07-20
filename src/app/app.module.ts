@@ -7,11 +7,24 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
-import { CepService } from './cep.service';
+import { CepService } from './services/cep.service';
+import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { UserFormComponent } from './components/user-form/user-form.component';
+import { UsersComponent } from './components/users/users.component';
+import { HomeComponent } from './pages/home/home.component';
+import { UserComponent } from './pages/user/user.component';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
 	declarations: [
-		AppComponent
+		AppComponent,
+		SidebarComponent,
+		NavbarComponent,
+		UserFormComponent,
+		UsersComponent,
+		HomeComponent,
+		UserComponent,
 	],
 	imports: [
 		BrowserModule,
@@ -20,6 +33,7 @@ import { CepService } from './cep.service';
 		MatTableModule,
 		MatInputModule,
 		HttpClientModule,
+		AppRoutingModule,
 	],
 	providers: [CepService],
 	bootstrap: [AppComponent]

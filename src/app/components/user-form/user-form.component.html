@@ -1,0 +1,55 @@
+<div class="content row justify-content-md-center">
+    <div class="form" style="margin: 20px;">
+        <form (ngSubmit)="submit(selectedPerson)">
+            <div class="form-row">
+                <div class="col-md-12 mb-3">
+                    <label>Nome</label>
+                    <input matInput [(ngModel)]="selectedPerson.name" name="name" required class="form-control">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="col-md-3 mb-3">
+                    <label>CPF</label>
+                    <input type="number" maxlength="11" matInput [(ngModel)]="selectedPerson.cpf" name="cpf" class="form-control"
+                        required>
+                </div>
+                <div class="col-md-3 mb-3">
+                    <label>Telefone</label>
+                    <input type="number" matInput [(ngModel)]="selectedPerson.phone" name="phone" class="form-control"
+                        required>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label>Email</label>
+                    <input matInput type="email" [(ngModel)]="selectedPerson.email" name="email" class="form-control"
+                        required>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="col-md-3 mb-3">
+                    <label>CEP</label>
+                    <input type="number" matInput [(ngModel)]="selectedPerson.cep" name="cep"
+                        (keyup)="changeCep($event)" class="form-control" required>
+                </div>
+                <div class="col-md-3 mb-3">
+                    <label>Estado</label>
+                    <input matInput readonly [(ngModel)]="selectedPerson.state" name="state" class="form-control"
+                        required>
+                </div>
+                <div class="col-md-3 mb-3">
+                    <label>Cidade</label>
+                    <input matInput readonly [(ngModel)]="selectedPerson.city" name="city" class="form-control"
+                        required>
+                </div>
+                <div class="col-md-3 mb-3">
+                    <label>Rua</label>
+                    <input matInput readonly [(ngModel)]="selectedPerson.street" name="street" class="form-control"
+                        required>
+                </div>
+            </div>
+            <button class="btn btn-primary mr-1" type="submit">Salvar</button>
+            <a class="btn btn-danger" type="button" (click)="cancel()">Cancelar</a>
+        </form>
+    </div>
+</div>
+
+<div class="loading" *ngIf="loading">Aguarde...</div>

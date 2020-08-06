@@ -1,0 +1,42 @@
+<div class="content">
+    <div class="card text-center ">
+        <div style="margin:0;" class="card-header">
+            <ul class="nav nav-pills card-header-pills">
+                <li class="nav-item">
+                    <a class="nav-link active" routerLink="/user">Adicionar Nova Pessoa</a>
+                </li>
+            </ul>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered table-striped">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th *ngFor="let column of columns" scope="col">{{column}}</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let person of persons">
+                            <td>{{person.name}}</td>
+                            <td>{{person.cpf}}</td>
+                            <td>{{person.phone}}</td>
+                            <td>{{person.email}}</td>
+                            <td>{{person.cep}}</td>
+                            <td>{{person.state}}</td>
+                            <td>{{person.city}}</td>
+                            <td>{{person.street}}</td>
+                            <td>
+                                <button (click)="editPerson(person)" type="button"
+                                    class="btn btn-warning">Editar</button>
+                            </td>
+                            <td>
+                                <button (click)="deletePerson(person)" type="button"
+                                    class="btn btn-danger">Remover</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
